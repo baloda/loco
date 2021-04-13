@@ -1,7 +1,12 @@
 FROM python:3.8
 
-ADD requirements.py .
+WORKDIR /apps/loco/
 
-RUN pip install requirements.py
+ADD requirements.txt .
+
+RUN pip install -r requirements.txt
 
 ADD . .
+
+
+EXPOSE 80

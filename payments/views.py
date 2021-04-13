@@ -7,6 +7,10 @@ from payments.services.transaction import TransactionService
 from payments.serializers import TansactionSerializer
 from payments.serializers import TansactionIDSerializer
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 # Create your views here.
 
 class TransactionListAPIView(APIView):

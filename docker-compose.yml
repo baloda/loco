@@ -1,0 +1,23 @@
+version: '3.5'
+services:
+  web:
+    build: .
+    restart: always
+    command: bash -c "/bin/bash start_server.sh"
+    container_name: loco
+    volumes:
+      - .:/apps/loco/
+    ports:
+      - "8000:80"
+    networks:
+      - web-db-net
+    # env_file:
+    #   - config/.env
+
+
+volumes:
+  mounted_data:
+
+networks:
+  web-db-net:
+    name: "web_db_net"
